@@ -1,0 +1,16 @@
+#include <iostream>
+#include <regex>
+using namespace std;
+
+int main() {
+    string pattern;
+    cout << "Enter regex pattern: ";
+    cin >> pattern;
+
+    try {
+        regex r(pattern);
+        cout << "Valid Regular Expression\n";
+    } catch (regex_error& e) {
+        cout << "Invalid Regular Expression\n";
+    }
+}
