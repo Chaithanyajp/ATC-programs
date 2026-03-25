@@ -1,0 +1,22 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+using namespace std;
+
+int main() {
+    ifstream file("input.txt");
+    string line;
+    int lines = 0, words = 0, chars = 0;
+
+    while (getline(file, line)) {
+        lines++;
+        chars += line.size() + 1; // +1 for newline
+        stringstream ss(line);
+        string word;
+        while (ss >> word) words++;
+    }
+
+    cout << "Lines: " << lines << "\n";
+    cout << "Words: " << words << "\n";
+    cout << "Characters: " << chars << "\n";
+}
